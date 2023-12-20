@@ -1,0 +1,11 @@
+<div class="vw-100 vh-100 d-flex flex-column align-items-center overflow-hidden">
+    <app-header></app-header>
+    <div class="d-flex flex-row w-100 flex-grow-1">
+        <section>
+            <app-menu [itens]="itens"></app-menu>
+        </section>
+        <section class="flex-grow-1 p-5 overflow-y-scroll">
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+</div>

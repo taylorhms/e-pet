@@ -1,0 +1,24 @@
+<div class="form-floating">
+    <input
+        class="form-control form-control-lg"
+        [id]="inputId"
+        [(ngModel)]="value"
+        (ngModelChange)="onChange(value)"
+        [attr.type]="type"
+        [attr.readonly]="readonly"
+        [attr.disabled]="disabled"
+        [attr.size]="size"
+        [attr.maxlength]="maxlength"
+        [attr.min]="min"
+        [attr.max]="max"
+        [attr.multiple]="multiple"
+        [attr.pattern]="pattern"
+        [attr.placeholder]="placeholder ?? label"
+        [attr.required]="required"
+        [attr.step]="step"
+        [attr.autofocus]="autofocus"
+        [attr.autocomplete]="autocomplete"
+        [attr.width]="width"
+        [attr.height]="height">
+    <label [for]="inputId">{{ label }}</label>
+</div>

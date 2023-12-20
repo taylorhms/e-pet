@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "primeicons/primeicons.css";
+
+:root {
+    --bs-primary: #70dea9;
+    --bs-primary-rgb: 112, 222, 169;
+}
+
+html, body {
+    font-family: 'Cambria Math', Cambria, 'Times New Roman', serif;
+    background: #d4d4d4;
+}
+
+label {
+    color: grey;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #333333;
+    --bs-btn-border-color: #333333;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #454545;
+    --bs-btn-hover-border-color: #454545;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #454545;
+    --bs-btn-active-border-color: #454545;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #333333;
+    --bs-btn-disabled-border-color: #333333;
+}
