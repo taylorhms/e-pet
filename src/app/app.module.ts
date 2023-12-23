@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
@@ -56,6 +57,7 @@ import { TableComponent } from './components/table/table.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     InputTextModule,
     ButtonModule,
     TableModule,
