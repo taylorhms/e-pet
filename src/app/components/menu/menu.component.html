@@ -11,9 +11,10 @@
                     {{ item.label }}
                 </h5>
                 <ul class="list-group list-group-flush" *ngIf="item.subitens">
-                    <li class="list-group-item" *ngFor="let subitem of item.subitens" [routerLink]="subitem.url">
+                    <li class="list-group-item p-0" *ngFor="let subitem of item.subitens">
+                        <a class="d-block text-reset px-3 py-2" [routerLink]="subitem.url">
                         <i *ngIf="subitem.icon" [className]="subitem.icon + ' me-2'"></i>
-                        {{ subitem.label }}
+                        {{ subitem.label }}</a>
                     </li>
                   </ul>
             </li>
