@@ -30,6 +30,8 @@ import { FormServicosComponent } from './pages/autenticado/servicos/form-servico
 import { FormPedidosComponent } from './pages/autenticado/pedidos/form-pedidos/form-pedidos.component';
 import { FormProdutosComponent } from './pages/autenticado/produtos/form-produtos/form-produtos.component';
 import { TableComponent } from './components/table/table.component';
+import { TableHeaderDirective } from './directives/table-header.directive';
+import { TableBodyDirective } from './directives/table-body.directive';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { TableComponent } from './components/table/table.component';
     FormPedidosComponent,
     FormProdutosComponent,
     TableComponent,
+    TableHeaderDirective,
+    TableBodyDirective,
     
   ],
   imports: [

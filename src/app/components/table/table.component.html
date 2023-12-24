@@ -1,3 +1,52 @@
-<table>
-    
-</table>
+<div class="card p-4">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <ng-container
+                        *ngTemplateOutlet="tableHeader?.templateRef ?? header; context: { $implicit: columns }"></ng-container>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of itens">
+                    <ng-container
+                        *ngTemplateOutlet="tableBody?.templateRef ?? body; context: { $implicit: item, columns: columns }"></ng-container>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center m-0">
+            <li class="page-item" [class.disabled]="isFirstPage()">
+                <span class="page-link" (click)="gotoPage(0)">
+                    <i class="pi pi-angle-double-left"></i>
+                </span>
+            </li>
+
+            <li class="page-item" *ngFor="let num of numPages" [class.disabled]="num == page">
+                <span class="page-link" (click)="gotoPage(num)">{{ num + 1 }}</span>
+            </li>
+
+            <li class="page-item" [class.disabled]="isLastPage()">
+                <span class="page-link" (click)="gotoPage(lastPage)">
+                    <i class="pi pi-angle-double-right"></i>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<!-- default templates -->
+
+<ng-template #header let-columns>
+    <td *ngFor="let column of columns">
+        {{ column | uppercase }}
+    </td>
+</ng-template>
+
+<ng-template #body let-item let-columns="columns">
+    <td *ngFor="let column of columns">
+        {{ item[column] }}
+    </td>
+</ng-template>
