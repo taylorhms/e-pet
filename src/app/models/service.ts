@@ -4,3 +4,5 @@ export interface Service {
     id: number,
     user: User
 }
+
+export type Services = Service[];

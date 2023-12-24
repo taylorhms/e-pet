@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseService } from './base.service';
 import { PageParams } from 'src/app/models/page-params';
 import { Observable } from 'rxjs';
+import { Page } from 'src/app/models/page';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ export abstract class CrudService<T, ID> extends BaseService {
 
   abstract getBasePath(): string;
 
-  findAll(pageParams: PageParams = {}): Observable<T[]> {
-    return super.get<T[]>(this.getBasePath(), { params: pageParams });
+  findAll(pageParams: PageParams = {}): Observable<Page<T>> {
+    return super.get<Page<T>>(this.getBasePath(), { params: pageParams });
   }
 
   findById(id: ID): Observable<T> {
