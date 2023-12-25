@@ -11,7 +11,11 @@ export abstract class CrudService<T, ID> extends BaseService {
 
   abstract getBasePath(): string;
 
-  findAll(pageParams: PageParams = {}): Observable<Page<T>> {
+  findAll(): Observable<T[]> {
+    return super.get<T[]>(`${this.getBasePath()}/list`);
+  }
+
+  findAllPage(pageParams: PageParams = {}): Observable<Page<T>> {
     return super.get<Page<T>>(this.getBasePath(), { params: pageParams });
   }
 

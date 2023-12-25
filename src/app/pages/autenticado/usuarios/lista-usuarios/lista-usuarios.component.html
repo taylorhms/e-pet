@@ -3,7 +3,7 @@
     <form class="col-md-6 col-8">
         <input type="text" placeholder="Buscar" class="form-control">
     </form>
-    <button class="btn btn-primary">
+    <button class="btn btn-primary" routerLink="/app/usuarios/novo">
         <i class="pi pi-plus me-2"></i>Adicionar
     </button>
 </div>
@@ -25,7 +25,7 @@
         <td>{{ user.department.name }}</td>
         <td>{{ user.role.name }}</td>
         <td class="text-nowrap">
-            <button class="btn btn-primary btn-sm me-1" title="Editar">
+            <button class="btn btn-primary btn-sm me-1" title="Editar" [routerLink]="['/app/usuarios/editar/', user.id]">
                 <i class="pi pi-user-edit"></i>
             </button>
             <button class="btn btn-danger btn-sm" title="Remover">

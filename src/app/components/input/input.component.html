@@ -20,5 +20,8 @@
         [attr.autocomplete]="autocomplete"
         [attr.width]="width"
         [attr.height]="height">
-    <label [for]="inputId">{{ label }}</label>
+    <label [for]="inputId">
+        {{ label }}
+        <sup *ngIf="required" style="color: red;">*</sup>
+    </label>
 </div>

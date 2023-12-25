@@ -1,0 +1,15 @@
+<div class="form-floating">
+    <select class="form-select form-select-lg"
+        [id]="inputId"
+        [attr.aria-label]="label"
+        [(ngModel)]="selectedIndex"
+        (ngModelChange)="select(selectedIndex)"
+        [attr.required]="required">
+
+        <option *ngFor="let item of itens; let i = index" [value]="i">{{ item[itemLabel] }}</option>
+    </select>
+    <label [for]="inputId">
+        {{ label }}
+        <sup *ngIf="required" style="color: red;">*</sup>
+    </label>
+</div>

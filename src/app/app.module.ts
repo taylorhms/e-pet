@@ -6,12 +6,8 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import { InputTextModule } from 'primeng/inputtext';
-import { ButtonModule } from 'primeng/button';
-import { TableModule } from 'primeng/table';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { TagModule } from 'primeng/tag';
-import { PasswordModule } from 'primeng/password';
+import { ToastModule } from 'primeng/toast';
 
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/autenticado/home/home.component';
@@ -32,6 +28,8 @@ import { FormProdutosComponent } from './pages/autenticado/produtos/form-produto
 import { TableComponent } from './components/table/table.component';
 import { TableHeaderDirective } from './directives/table-header.directive';
 import { TableBodyDirective } from './directives/table-body.directive';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { FieldErrorComponent } from './components/field-error/field-error.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +51,8 @@ import { TableBodyDirective } from './directives/table-body.directive';
     TableComponent,
     TableHeaderDirective,
     TableBodyDirective,
+    DropdownComponent,
+    FieldErrorComponent,
     
   ],
   imports: [
@@ -62,12 +62,8 @@ import { TableBodyDirective } from './directives/table-body.directive';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    InputTextModule,
-    ButtonModule,
-    TableModule,
-    TagModule,
     ProgressSpinnerModule,
-    PasswordModule,
+    ToastModule,
     AppRoutingModule
   ],
   providers: [],
