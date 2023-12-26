@@ -8,19 +8,17 @@ import { Services } from "./service";
 import { Users } from "./user";
 
 const roles: Roles = [
-    { id: 1, name: 'admin' },
-    { id: 2, name: 'gerente' },
-    { id: 3, name: 'vendedor' }
+    { id: 1, name: 'employee' }
 ];
 
 const departments: Departments = [
-    { id: 1, name: 'vendas' }
+    { id: 1, name: 'administrative' }
 ];
 
 const users: Users = [
     { id: 1, name: 'Daniel Fonseca', email: 'daniel.fonseca@example.com', contact: '(91) 98765-4321', department: departments[0], role: roles[0] },
-    { id: 2, name: 'Henrique Teixeira', email: 'henrique.teixeira@example.com', contact: '(91) 91234-5678', department: departments[0], role: roles[1] },
-    { id: 3, name: 'Taylor Sousa', email: 'taylor.sousa@example.com', contact: '(91) 91011-1213', department: departments[0], role: roles[2] }
+    { id: 2, name: 'Henrique Teixeira', email: 'henrique.teixeira@example.com', contact: '(91) 91234-5678', department: departments[0], role: roles[0] },
+    { id: 3, name: 'Taylor Sousa', email: 'taylor.sousa@example.com', contact: '(91) 91011-1213', department: departments[0], role: roles[0] }
 ]
 
 const services: Services = [

@@ -43,3 +43,8 @@ i.pi {
     font-size: 0.75em;
     font-weight: bold;
 }
+
+.ng-invalid.ng-dirty > .form-floating input,
+.ng-invalid.ng-dirty > .form-floating select {
+    border-color: red;
+}

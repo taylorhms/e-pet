@@ -1,6 +1,6 @@
 <h2>Cadastro Usuário</h2>
 
-<form class="row g-3 my-4" [formGroup]="form" (submit)="enviar()">
+<form class="row g-3 my-4" [formGroup]="form" (ngSubmit)="enviar()">
 
     <div class="col-12">
         <app-input label="Nome" formControlName="name" [required]="true"></app-input>
@@ -38,10 +38,10 @@
     </div>
 
 
-    <div class="col-12 d-flex justify-content-between">
-        <button class="btn btn-primary btn-lg">
+    <div class="col-12 d-flex justify-content-between mt-5">
+        <button type="button" class="btn btn-primary btn-lg" (click)="voltar()">
             <i class="pi pi-arrow-left me-2"></i>Voltar
         </button>
-        <button class="btn btn-dark btn-lg" type="submit">Registrar</button>
+        <button type="submit" class="btn btn-dark btn-lg">Registrar</button>
     </div>
 </form>

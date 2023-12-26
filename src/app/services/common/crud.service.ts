@@ -23,11 +23,11 @@ export abstract class CrudService<T, ID> extends BaseService {
     return super.get<T>(`${this.getBasePath()}/${id}`);
   }
 
-  save(object: T): Observable<any> {
+  save(object: T | any): Observable<any> {
     return super.post<T>(this.getBasePath(), object);
   }
 
-  update(id: ID, object: T): Observable<T> {
+  update(id: ID, object: T | any): Observable<T> {
     return super.put<T>(`${this.getBasePath()}/${id}`, object);
   }
 }
