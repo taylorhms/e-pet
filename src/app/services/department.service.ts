@@ -12,8 +12,5 @@ export class DepartmentService extends CrudService<Department, number> {
   override getBasePath(): string {
     return '/department';
   }
-  
-  override findAll(): Observable<Department[]> {
-    return of(testData.departments);
-  }
+
 }

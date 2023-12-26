@@ -1,9 +1,9 @@
-<h2>Cadastro Usuário</h2>
+<h2>{{ isAlteracao ? 'Alterar Usuário' : 'Adicionar Usuário' }}</h2>
 
 <form class="row g-3 my-4" [formGroup]="form" (ngSubmit)="enviar()">
 
     <div class="col-12">
-        <app-input label="Nome" formControlName="name" [required]="true"></app-input>
+        <app-input label="Nome de Usuário (Login)" formControlName="name" [required]="true"></app-input>
         <app-field-error [control]="form.get('name')" [errors]="erros"></app-field-error>
     </div>
 
@@ -11,27 +11,22 @@
         <app-input label="E-mail" formControlName="email" [required]="true"></app-input>
         <app-field-error [control]="form.get('email')" [errors]="erros"></app-field-error>
     </div>
-    
-    <div class="col-md-6">
-        <app-input label="Login" formControlName="login" [required]="true"></app-input>
-        <app-field-error [control]="form.get('login')" [errors]="erros"></app-field-error>
-    </div>
+
     <div class="col-md-6">
         <app-input label="Telefone" formControlName="contact" [required]="true"></app-input>
         <app-field-error [control]="form.get('contact')" [errors]="erros"></app-field-error>
     </div>
-    <div class="col-md-6">
-        <app-input label="Cargo/Função"></app-input><!-- ?? -->
-        <!-- <app-field-error [control]="form.get('email')" [errors]="erros"></app-field-error> -->
-    </div>
+
     <div class="col-md-6">
         <app-dropdown label="Perfil" [itens]="roles" itemLabel="name" formControlName="role" [required]="true"></app-dropdown>
         <app-field-error [control]="form.get('role')" [errors]="erros"></app-field-error>
     </div>
+
     <div class="col-md-6">
         <app-input label="Senha" formControlName="password" [required]="true"></app-input>
         <app-field-error [control]="form.get('password')" [errors]="erros"></app-field-error>
     </div>
+
     <div class="col-md-6">
         <app-dropdown label="Setor" [itens]="departments" itemLabel="name" formControlName="department" [required]="true"></app-dropdown>
         <app-field-error [control]="form.get('department')" [errors]="erros"></app-field-error>

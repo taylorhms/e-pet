@@ -1,1 +1,26 @@
-<p>form-servicos works!</p>
+<h2>{{ isAlteracao ? 'Alterar Serviço' : 'Adicionar Serviço' }}</h2>
+
+<form class="row g-3 my-4" [formGroup]="form" (ngSubmit)="enviar()">
+
+    <div class="col-12">
+        <app-input label="Nome" formControlName="name" [required]="true"></app-input>
+        <app-field-error [control]="form.get('name')" [errors]="erros"></app-field-error>
+    </div>
+    
+    <div class="col-md-6">
+        <app-input type="date" label="Data" formControlName="date" [required]="true"></app-input>
+        <app-field-error [control]="form.get('date')" [errors]="erros"></app-field-error>
+    </div>
+
+    <div class="col-md-12">
+        <app-dropdown label="Usuário" [itens]="users" itemLabel="name" formControlName="user" [required]="true"></app-dropdown>
+        <app-field-error [control]="form.get('user')" [errors]="erros"></app-field-error>
+    </div>
+
+    <div class="col-12 d-flex justify-content-between mt-5">
+        <button type="button" class="btn btn-primary btn-lg" (click)="voltar()">
+            <i class="pi pi-arrow-left me-2"></i>Voltar
+        </button>
+        <button type="submit" class="btn btn-dark btn-lg">Registrar</button>
+    </div>
+</form>

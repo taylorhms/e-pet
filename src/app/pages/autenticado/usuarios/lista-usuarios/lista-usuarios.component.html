@@ -1,7 +1,7 @@
 <h2>Usuários</h2>
 <div class="d-flex justify-content-between">
-    <form class="col-md-6 col-8">
-        <input type="text" placeholder="Buscar" class="form-control">
+    <form class="col-md-6 col-8" (submit)="carregarLista()">
+        <input type="text" placeholder="Buscar" class="form-control" [(ngModel)]="filter">
     </form>
     <button class="btn btn-primary" routerLink="/app/usuarios/novo">
         <i class="pi pi-plus me-2"></i>Adicionar
@@ -34,43 +34,3 @@
         </td>
     </ng-template>
 </app-table>
-
-<!-- <br>
-<p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-product>
-        <tr>
-            <td>{{ product.code }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.category }}</td>
-            <td>{{ product.quantity }}</td>
-        </tr>
-    </ng-template>
-</p-table>
-
-<p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-product>
-        <tr>
-            <td>{{ product.code }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.category }}</td>
-            <td>{{ product.quantity }}</td>
-        </tr>
-    </ng-template>
-</p-table> -->
-

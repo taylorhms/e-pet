@@ -11,12 +11,15 @@ import { FormProdutosComponent } from './pages/autenticado/produtos/form-produto
 import { ListaProdutosComponent } from './pages/autenticado/produtos/lista-produtos/lista-produtos.component';
 import { FormServicosComponent } from './pages/autenticado/servicos/form-servicos/form-servicos.component';
 import { ListaServicosComponent } from './pages/autenticado/servicos/lista-servicos/lista-servicos.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'app',
     component: AutenticadoComponent,
+    canActivate: [authGuard],
+    canActivateChild: [authGuard],
     children: [
       { path: 'home', component: HomeComponent },
       {

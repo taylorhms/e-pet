@@ -25,7 +25,6 @@ export class FormUsuariosComponent implements OnInit {
   form = this.formBuilder.group<any>({
     name: [null, Validators.required],
     email: [null, [Validators.required, Validators.email]],
-    login: [null, Validators.required],
     contact: [null, Validators.required],
     role: [null, Validators.required],
     password: [null, Validators.required],

@@ -13,7 +13,4 @@ export class RoleService extends CrudService<Role, number> {
     return '/role';
   }
 
-  override findAll(): Observable<Role[]> {
-    return of(testData.roles);
-  }
 }

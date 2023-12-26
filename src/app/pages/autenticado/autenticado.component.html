@@ -1,5 +1,5 @@
 <div class="vw-100 vh-100 d-flex flex-column align-items-center overflow-hidden">
-    <app-header></app-header>
+    <app-header [login]="loginUsuario" (logout)="logout()"></app-header>
     <div class="d-flex flex-row w-100 flex-grow-1 overflow-hidden">
         <section>
             <app-menu [itens]="itens"></app-menu>

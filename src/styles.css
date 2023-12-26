@@ -48,3 +48,7 @@ i.pi {
 .ng-invalid.ng-dirty > .form-floating select {
     border-color: red;
 }
+
+.btn-danger {
+    display: none!important;
+}

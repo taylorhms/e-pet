@@ -1,1 +1,34 @@
 <h2>Agendamentos</h2>
+<div class="d-flex justify-content-between">
+    <form class="col-md-6 col-8" (submit)="carregarLista()">
+        <input type="text" placeholder="Buscar" class="form-control" [(ngModel)]="filter">
+    </form>
+    <button class="btn btn-primary" routerLink="/app/servicos/novo">
+        <i class="pi pi-plus me-2"></i>Adicionar
+    </button>
+</div>
+<br>
+
+<app-table [itens]="servicos" [page]="page" [size]="size" [totalElements]="totalElements" (onPage)="onPage($event)">
+    <ng-template appTableHeader>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Data</th>
+        <th scope="col">Usuário</th>
+        <th scope="col"></th>
+    </ng-template>
+    <ng-template appTableBody let-product>
+        <th scope="row">{{ product.id }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.date | date:'dd/MM/yyyy' }}</td>
+        <td>{{ product.user?.name }}</td>
+        <td class="text-nowrap">
+            <button class="btn btn-primary btn-sm me-1" title="Editar" [routerLink]="['/app/servicos/editar/', product.id]">
+                <i class="pi pi-pencil"></i>
+            </button>
+            <button class="btn btn-danger btn-sm" title="Remover">
+                <i class="pi pi-trash"></i>
+            </button>
+        </td>
+    </ng-template>
+</app-table>

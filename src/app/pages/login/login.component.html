@@ -3,13 +3,13 @@
         <img src="assets/logo.png" width="60%">
     </section>
     <section class="col-md-4 py-3">
-        <form class="row gy-4 gx-0 col-10 mx-auto">
+        <form class="row gy-4 gx-0 col-10 mx-auto" [formGroup]="form" (submit)="login()">
 
-            <app-input label="Login"></app-input>
-            <app-input label="Senha" type="password"></app-input>
+            <app-input label="Login" [required]="true" formControlName="username"></app-input>
+            <app-input label="Senha" type="password" [required]="true" formControlName="password"></app-input>
 
-            <button class="btn btn-secondary btn-lg" routerLink="/app/home">Acessar</button>
-            <a class="text-reset text-decoration-underline">Não tenho acesso</a>
+            <button type="submit" class="btn btn-secondary btn-lg">Acessar</button>
+            <a class="text-reset text-decoration-underline" (click)="semAcesso()">Não tenho acesso</a>
         </form>
     </section>
 </div>

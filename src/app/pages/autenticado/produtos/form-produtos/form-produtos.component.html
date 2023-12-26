@@ -1,1 +1,30 @@
-<p>form-produtos works!</p>
+<h2>{{ isAlteracao ? 'Alterar Produto' : 'Adicionar Produto' }}</h2>
+
+<form class="row g-3 my-4" [formGroup]="form" (ngSubmit)="enviar()">
+
+    <div class="col-12">
+        <app-input label="Nome" formControlName="name" [required]="true"></app-input>
+        <app-field-error [control]="form.get('name')" [errors]="erros"></app-field-error>
+    </div>
+
+    <div class="col-12">
+        <app-input label="Código" formControlName="code" [required]="true"></app-input>
+        <app-field-error [control]="form.get('code')" [errors]="erros"></app-field-error>
+    </div>
+    
+    <div class="col-md-6">
+        <app-input type="number" step="0.01" label="Preço" formControlName="price" [required]="true"></app-input>
+        <app-field-error [control]="form.get('price')" [errors]="erros"></app-field-error>
+    </div>
+    <div class="col-md-6">
+        <app-input label="Quantidade" formControlName="quantity" [required]="true"></app-input>
+        <app-field-error [control]="form.get('quantity')" [errors]="erros"></app-field-error>
+    </div>
+
+    <div class="col-12 d-flex justify-content-between mt-5">
+        <button type="button" class="btn btn-primary btn-lg" (click)="voltar()">
+            <i class="pi pi-arrow-left me-2"></i>Voltar
+        </button>
+        <button type="submit" class="btn btn-dark btn-lg">Registrar</button>
+    </div>
+</form>
