@@ -1,5 +1,5 @@
 export interface PageParams {
     page?: number,
     size?: number,
-    filter?: string
+    filtro?: string
 }

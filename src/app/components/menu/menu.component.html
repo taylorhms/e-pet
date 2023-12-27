@@ -1,6 +1,5 @@
-<div class="offcanvas-md offcanvas-end h-100 bg-white" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+<div class="offcanvas-md offcanvas-start h-100 bg-white" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Menu</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body p-3">
@@ -12,7 +11,7 @@
                 </h5>
                 <ul class="list-group list-group-flush" *ngIf="item.subitens">
                     <li class="list-group-item p-0" *ngFor="let subitem of item.subitens">
-                        <a class="d-block text-reset px-3 py-2" [routerLink]="subitem.url">
+                        <a class="d-block text-reset px-3 py-2" [routerLink]="subitem.url" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
                         <i *ngIf="subitem.icon" [className]="subitem.icon + ' me-2'"></i>
                         {{ subitem.label }}</a>
                     </li>

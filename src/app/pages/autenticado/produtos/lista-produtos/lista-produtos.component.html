@@ -1,7 +1,7 @@
-<h2>Produtos</h2>
+<h2 class="mb-4">Produtos</h2>
 <div class="d-flex justify-content-between">
     <form class="col-md-6 col-8" (submit)="carregarLista()">
-        <input type="text" placeholder="Buscar" class="form-control" [(ngModel)]="filter">
+        <input type="text" placeholder="Buscar" name="filtro" class="form-control" [(ngModel)]="filter" (ngModelChange)="filtrar()">
     </form>
     <button class="btn btn-primary" routerLink="/app/produtos/novo">
         <i class="pi pi-plus me-2"></i>Adicionar

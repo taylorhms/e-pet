@@ -17,6 +17,7 @@ export class ListaProdutosComponent {
   size = 10;
   totalElements = 0;
   filter = '';
+  filtroTimeout?: number;
 
   constructor(
     private productService: ProductService,
@@ -34,7 +35,7 @@ export class ListaProdutosComponent {
   }
 
   carregarLista() {
-    this.productService.findAllPage({ page: this.page, size: this.size, filter: this.filter }).subscribe({
+    this.productService.findAllPage({ page: this.page, size: this.size, filtro: this.filter }).subscribe({
       next: res => {
         this.produtos = res.content;
         this.totalElements = res.totalElements;
@@ -43,5 +44,12 @@ export class ListaProdutosComponent {
         this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Não foi possível carregar os dados.' });
       }
     });
+  }
+
+  filtrar() {
+    if (this.filtroTimeout)
+      window.clearTimeout(this.filtroTimeout);
+
+    this.filtroTimeout = window.setTimeout(() => this.carregarLista(), 700);
   }
 }

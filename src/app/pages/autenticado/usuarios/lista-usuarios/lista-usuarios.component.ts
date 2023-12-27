@@ -17,6 +17,7 @@ export class ListaUsuariosComponent implements OnInit {
   size = 10;
   totalElements = 0;
   filter = '';
+  filtroTimeout?: number;
 
   constructor(
     private userService: UserService,
@@ -34,7 +35,7 @@ export class ListaUsuariosComponent implements OnInit {
   }
 
   carregarLista() {
-    this.userService.findAllPage({ page: this.page, size: this.size, filter: this.filter }).subscribe({
+    this.userService.findAllPage({ page: this.page, size: this.size, filtro: this.filter }).subscribe({
       next: res => {
         this.usuarios = res.content;
         this.totalElements = res.totalElements;
@@ -43,5 +44,12 @@ export class ListaUsuariosComponent implements OnInit {
         this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Não foi possível carregar os dados.' });
       }
     });
+  }
+
+  filtrar() {
+    if (this.filtroTimeout)
+      window.clearTimeout(this.filtroTimeout);
+
+    this.filtroTimeout = window.setTimeout(() => this.carregarLista(), 700);
   }
 }
